@@ -1,0 +1,82 @@
+<html>
+    <head>javaScript object </head>
+<body>
+    <p id="demo"></p>
+    <button id="click me">click me </button>
+
+    <!----create an bject-->
+<script>
+    //method 1
+    var student = {
+        name:"chris",
+        age:"25",
+        studies: "computer "
+    }
+    document.getElementById("demo").innerHTML = student.name + " of the  age  " + student.age + " ,he  study "+student.studies
+
+</script>
+<script>
+    //method2
+    var student2 = new Object()
+    student2.name= "louma"
+    student2.age= 26
+    student2.studies= "police "
+    document.getElementById("demo").innerHTML = student2.name + " of the  age " + student2.age + " ,he  study "+student2.studies
+</script>
+<script>
+    //method3
+    function stud( name, age , studies ){ 
+       
+        this.name = name;
+        this.age = age;
+        this.studies = studies;
+       
+
+    }
+    var student = stud("pierre", 26 ,"computer science ");
+    console.log(student);
+  // document.getElementById("demo").innerHTML = student.name+" , "+student.age+" , "+student.studies
+    
+</script>
+<script>
+    //prop of the object 
+    let user={
+        name:"me ",
+        age:"25"
+        
+    };
+    function sayHi(){
+        alert("hello!")
+    }
+    user.message=sayHi
+    document.getElementById("demo").innerHTML = "hi its "+ user.name;
+    document.getElementById("click me").onclick = user.message;
+
+</script>
+<script>
+    //getter
+    let car ={
+        model:"bmw",
+        coleur_car: "black",
+        get coleur(){
+            return this.coleur_car
+        }
+       
+    }
+    document.getElementById("demo").innerHTML = car.coleur
+</script>
+<script>
+    //setter 
+     let car1 ={
+        model:"bmw",
+        coleur_car: "",
+        set coleur(coleur){
+            return this.coleur_car = coleur
+        }
+       
+    }
+     car1.coleur = "red "
+     document.getElementById("demo").innerHTML = car1.coleur_car
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<html>
+    <head>javaScript demo </head>
+<body>
+    <p id="demo"></p>
+
+</body>
+<script >
+    //array 
+    let  cars=["bmw","clio","marcedes"]
+    document.getElementById("demo").innerHTML = cars ;
+
+    //get ellement by index 
+    let  bmw=cars[0]
+    document.getElementById("demo").innerHTML = bmw ;
+
+    //length of array 
+    let len = cars.length
+    document.getElementById("demo").innerHTML = len ;
+    
+    //get last item 
+    let last= cars[cars.length - 1 ]
+    document.getElementById("demo").innerHTML = last ;
+
+    //loop
+    cars.forEach((item, index , array) => {
+    console.log(item," : ", index)        
+    });
+
+    //to string 
+    document.getElementById("demo").innerHTML = cars.toString() ;
+
+    //pop() remove the last item
+    let last1 = cars.pop()
+   console.log("we remove the last element  : ",last1)  ;
+    document.getElementById("demo").innerHTML = cars ;
+
+
+    //push() add a new element 
+    cars.push("audi")
+    document.getElementById("demo").innerHTML = cars ;
+
+    //shift() remove the first element 
+    let first = cars.shift()
+    console.log("we remove the first element : ",first)
+    document.getElementById("demo").innerHTML = cars ;
+
+     //unshift() add element at the begining 
+      cars.unshift("ferrari")
+    document.getElementById("demo").innerHTML = cars ;
+
+    //concat() 
+    let cars2= ["yamaha","volvo","suzuki"]
+    let vehicule = cars.concat(cars2)
+    document.getElementById("demo").innerHTML =vehicule ;
+    
+    //sort() 
+    vehicule.sort()
+    document.getElementById("demo").innerHTML = vehicule ;
+
+    //reverse() => sort descendent 
+    vehicule.reverse()
+    document.getElementById("demo").innerHTML = vehicule ;
+
+    //map()
+    let tab1= ['1','2','3','4']
+    let tab2 = tab1.map(multiply)
+    function multiply(value) {
+        return value *2
+    }
+    document.getElementById("demo").innerHTML = tab2 ;
+
+    //filter()
+    let tab3= tab1.filter(filt)
+    function filt (value){
+        return value>= 2 
+    }
+    document.getElementById("demo").innerHTML = tab3;
+
+    //reduce()
+     let tab4 = tab1.reduce(sum)
+     function sum(total,value){
+         return total+value
+     }
+     document.getElementById("demo").innerHTML = tab4 ;
+
+
+
+
+
+
+</script>
+
+</html>
